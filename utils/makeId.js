@@ -10,3 +10,12 @@ export const makeId = (length) => {
 
   return result;
 };
+
+export const makeNumbers = (number) => {
+  const nfts = [];
+
+  for (let i = 1; i <= number; i += 1) {
+    nfts.push(i);
+  }
+  return nfts;
+};

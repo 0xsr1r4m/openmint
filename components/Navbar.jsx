@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-unused-vars */
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
@@ -72,7 +74,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
-  console.log({ theme });
+  // console.log({ theme });
   // console.log({ images });
 
   return (
@@ -149,7 +151,8 @@ const Navbar = () => {
             width={20}
             height={20}
             onClick={() => setIsOpen(false)}
-            className={theme === "light" && "filter invert"}
+            // className={theme === "light" && "filter invert"}
+            className={theme === "light" ? "filter invert" : ""}
           />
         ) : (
           <Image
@@ -159,7 +162,8 @@ const Navbar = () => {
             width={25}
             height={25}
             onClick={() => setIsOpen(true)}
-            className={theme === "light" && "filter invert"}
+            // className={theme === "light" && "filter invert"}
+            className={theme === "light" ? "filter invert" : ""}
           />
         )}
 

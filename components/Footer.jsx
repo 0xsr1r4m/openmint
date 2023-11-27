@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -96,7 +97,8 @@ const Footer = () => {
                   width={24}
                   height={24}
                   objectFit="contain"
-                  className={theme === "light" && "filter invert"}
+                  // className={theme === "light" && "filter invert"}
+                  className={theme === "light" ? "filter invert" : ""}
                 />
               </div>
             ))}
